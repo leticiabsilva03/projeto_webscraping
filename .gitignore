@@ -11,5 +11,4 @@ __pycache__/
 
 # Dados sensíveis ou temporários
 .env
-*.csv
 *.json
