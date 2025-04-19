@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 import time
 import re
 import csv
+import os
 
 # Configura sessão com headers
 session = requests.Session()
@@ -101,14 +102,14 @@ while True:
 
 print(f"Total de livros coletados: {len(books)}")
 # Exporta para CSV
-with open('goodreads_read.csv', 'w', newline='', encoding='utf-8') as f:
-    writer = csv.DictWriter(
-        f,
-        fieldnames=[
-            'title', 'author', 'user_rating',
-            'published_year', 'avg_rating', 'ratings_count'
-        ]
-    )
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+DATA_DIR = os.path.join(BASE_DIR, 'data')
+os.makedirs(DATA_DIR, exist_ok=True)
+
+output_path = os.path.join(DATA_DIR, 'goodreads_read.csv')
+
+with open(output_path, 'w', newline='', encoding='utf-8') as f:
+    writer = csv.DictWriter(f, fieldnames=['title','author','user_rating','published_year','avg_rating','ratings_count'])
     writer.writeheader()
     writer.writerows(books)
 

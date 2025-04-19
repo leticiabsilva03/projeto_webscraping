@@ -47,13 +47,6 @@ Os resultados são exportados para um arquivo CSV (`goodreads_read.csv`).
    pip install -r requirements.txt
    ```
 
-> **requirements.txt** deve conter:
-> ```text
-> requests
-> beautifulsoup4
-> ```
-
-
 ---
 
 ## 🛠️ Uso
