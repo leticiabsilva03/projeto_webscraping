@@ -3,12 +3,6 @@
 [![Python Version](https://img.shields.io/badge/python-3.7%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-Repositório: https://github.com/leticiabsilva03/projeto_webscraping
-
-> **Observação**: este projeto foi inicialmente pensado para Letterboxd, mas foi adaptado para coletar dados da estante “read” no Goodreads.
-
----
-
 ## 📋 Descrição
 
 Um scraper em Python que percorre todas as páginas da estante “read” de um usuário no Goodreads, extraindo:
@@ -86,12 +80,15 @@ Os resultados são exportados para um arquivo CSV (`goodreads_read.csv`).
 ## 📁 Estrutura do Projeto
 
 ```text
-project/
-├── src/               # Código-fonte
-├── data/              # Dados coletados
-├── config/            # Arquivos de configuração
-├── Dockerfile         # Configuração do Docker
-└── requirements.txt   # Dependências Python
+projeto_webscraping/
+├── src/                         # Código-fonte (scripts principais)
+│   └── scraper.py               # Seu script de scraping
+├── data/                        # Dados coletados (CSV, JSON, etc.)
+│   └── goodreads_read.csv       # Será salvo aqui
+├── config/                      # Configs adicionais (ex: config.yaml, .env)
+├── requirements.txt             # Dependências Python
+├── Dockerfile                   # Docker config (opcional)
+└── README.md                    # Documentação
 ```
 
 ---
